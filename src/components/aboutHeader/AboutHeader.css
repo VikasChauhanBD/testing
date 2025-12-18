@@ -1,0 +1,149 @@
+.about-header {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  color: white;
+}
+
+.about-header-background-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.about-header-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 1s ease-in-out;
+}
+
+.about-header-background-image.active {
+  opacity: 1;
+  animation: zoomIn 6s ease-out forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.about-header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  z-index: 2;
+}
+
+.about-header-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about-header-text {
+  margin-bottom: 60px;
+}
+
+.about-header-text h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 2rem 0 2rem 2rem;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+}
+
+.about-header-text h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-left: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-header-description {
+  width: 100%;
+  background: black;
+  padding: 0 2rem 2rem;
+  box-shadow: 0 -40px 60px 40px black;
+  animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+.about-header-description p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 0;
+  font-weight: 300;
+  text-align: justify;
+}
+
+/* -------------------------- Responsive Style -------------------------- */
+
+@media (max-width: 1440px) {
+  .about-header-text h1 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-header-text h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .about-header-text h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-header-text h1 {
+    font-size: 2rem;
+  }
+
+  .about-header-text h2 {
+    font-size: 1.5rem;
+  }
+}
