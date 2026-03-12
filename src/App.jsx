@@ -1,10 +1,11 @@
 import React from "react";
 import "./App.css";
+import AppShowcase from "./components/AppShowcase";
 
 function App() {
   return (
     <>
-      <h1>Testing..........</h1>
+      <AppShowcase />
     </>
   );
 }
