@@ -5,7 +5,9 @@ import Slider from "./components/Slider/Slider";
 import MzaCarousel from "./components/mzaCarousel/MzaCarousel";
 import Face404 from "./components/face404/Face404";
 import ConvertedComponent from "./components/new/ConvertedComponent";
-import ScrollSection from "./components/scrollSection/ScrollSection";
+// import ScrollSection from "./components/scrollSection/ScrollSection";
+import Loader from "./components/loader/Loader";
+import Wallet from "./components/wallet/Wallet";
 
 function App() {
   return (
@@ -14,8 +16,10 @@ function App() {
       {/* <Slider /> */}
       {/* <MzaCarousel /> */}
       {/* <Face404 /> */}
-      <ConvertedComponent />
+      {/* <ConvertedComponent /> */}
       {/* <ScrollSection /> */}
+      {/* <Loader /> */}
+      <Wallet />
     </>
   );
 }
