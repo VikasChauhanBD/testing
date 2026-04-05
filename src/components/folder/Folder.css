@@ -1,0 +1,164 @@
+/* Section */
+.folder-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* File wrapper */
+.file {
+  position: relative;
+  width: 240px;
+  height: 160px;
+  cursor: pointer;
+  transform-origin: bottom;
+  perspective: 1500px;
+  z-index: 50;
+}
+
+/* Hover text */
+.hover-text {
+  font-size: 1.875rem;
+  padding-top: 1rem;
+  opacity: 0.2;
+}
+
+/* ── work-5 : folder back (bottom layer) ── */
+.work-5 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #d97706; /* amber-600 */
+  transform-origin: top;
+  border-radius: 1rem;
+  border-top-left-radius: 0;
+  transition: all 0.3s ease;
+}
+
+/* work-5 tab left (after) */
+.work-5::after {
+  content: "";
+  position: absolute;
+  bottom: 99%;
+  left: 0;
+  width: 80px;
+  height: 16px;
+  background-color: #d97706;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+/* work-5 tab connector left (before) */
+.work-5::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 75.5px;
+  width: 16px;
+  height: 16px;
+  background-color: #d97706;
+  clip-path: polygon(0 35%, 0% 100%, 50% 100%);
+}
+
+/* folder hover shadow on work-5 */
+.file:hover .work-5 {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ── work-4 : paper layer 4 ── */
+.work-4 {
+  position: absolute;
+  inset: 4px;
+  background-color: #a1a1aa; /* zinc-400 */
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  transform-origin: bottom;
+  user-select: none;
+}
+
+.file:hover .work-4 {
+  transform: rotateX(-20deg);
+}
+
+/* ── work-3 : paper layer 3 ── */
+.work-3 {
+  position: absolute;
+  inset: 4px;
+  background-color: #d4d4d8; /* zinc-300 */
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  transform-origin: bottom;
+}
+
+.file:hover .work-3 {
+  transform: rotateX(-30deg);
+}
+
+/* ── work-2 : paper layer 2 ── */
+.work-2 {
+  position: absolute;
+  inset: 4px;
+  background-color: #e4e4e7; /* zinc-200 */
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  transform-origin: bottom;
+}
+
+.file:hover .work-2 {
+  transform: rotateX(-38deg);
+}
+
+/* ── work-1 : folder front flap ── */
+.work-1 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 156px;
+  background: linear-gradient(
+    to top,
+    #f59e0b,
+    #fbbf24
+  ); /* amber-500 → amber-400 */
+  border-radius: 1rem;
+  border-top-right-radius: 0;
+  transition: all 0.3s ease;
+  transform-origin: bottom;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* work-1 tab right (after) */
+.work-1::after {
+  content: "";
+  position: absolute;
+  bottom: 99%;
+  right: 0;
+  width: 146px;
+  height: 16px;
+  background-color: #fbbf24; /* amber-400 */
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+/* work-1 tab connector right (before) */
+.work-1::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 142px;
+  width: 12px;
+  height: 12px;
+  background-color: #fbbf24;
+  clip-path: polygon(100% 14%, 50% 100%, 100% 100%);
+}
+
+.file:hover .work-1 {
+  box-shadow:
+    inset 0 20px 40px #fbbf24,
+    inset 0 -20px 40px #d97706;
+  transform: rotateX(-46deg) translateY(1px);
+}

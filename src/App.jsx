@@ -8,6 +8,8 @@ import ConvertedComponent from "./components/new/ConvertedComponent";
 // import ScrollSection from "./components/scrollSection/ScrollSection";
 import Loader from "./components/loader/Loader";
 import Wallet from "./components/wallet/Wallet";
+import Folder from "./components/folder/Folder";
+import ProfileCard from "./components/profileCard/ProfileCard";
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
       {/* <ConvertedComponent /> */}
       {/* <ScrollSection /> */}
       {/* <Loader /> */}
-      <Wallet />
+      {/* <Wallet /> */}
+      {/* <Folder /> */}
+      <ProfileCard />
     </>
   );
 }
