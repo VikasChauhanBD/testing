@@ -1,6 +1,6 @@
 /* Slider.css */
 
-*,
+/* *,
 *::before,
 *::after {
   margin: 0;
@@ -17,7 +17,7 @@ body {
 body {
   font-family: "Instrument Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
-}
+} */
 
 .slider {
   width: 100%;
