@@ -1,0 +1,336 @@
+/* ── Section ─────────────────────────────────────────────────── */
+.sv-section {
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f7fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 16px 60px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* ── Header ──────────────────────────────────────────────────── */
+.sv-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.sv-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #2dc98a;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+.sv-title {
+  font-size: clamp(30px, 5vw, 54px);
+  font-weight: 800;
+  color: #1a1d2e;
+  margin: 0 0 10px;
+  line-height: 1.1;
+}
+.sv-title-accent {
+  color: #2dc98a;
+}
+.sv-subtitle {
+  font-size: 15px;
+  color: #7a7f99;
+  margin: 0;
+  font-weight: 300;
+}
+
+/* ── Stage (arrow + cards + arrow) ──────────────────────────── */
+.sv-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 1300px;
+}
+
+/* ── Arrow buttons ───────────────────────────────────────────── */
+.sv-arrow {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid #e0e4ef;
+  background: #ffffff;
+  color: #1a1d2e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition:
+    background 0.22s,
+    border-color 0.22s,
+    color 0.22s,
+    transform 0.18s;
+  z-index: 10;
+}
+.sv-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+.sv-arrow:hover {
+  background: #2dc98a;
+  border-color: #2dc98a;
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+/* ── Cards Wrapper ───────────────────────────────────────────── */
+.sv-cards-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex: 1;
+  /* Desktop: 7 cards → height based on center card */
+  height: 480px;
+}
+
+/* ── Base card ───────────────────────────────────────────────── */
+.sv-card {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition:
+    width 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+    height 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Desktop: 7 cards  (side 1,2,3) ────────────────────────── */
+.sv-card--center {
+  width: 300px;
+  height: 440px;
+  background: #1a1d2e;
+  box-shadow:
+    0 0 0 2px #2dc98a,
+    0 28px 72px rgba(45, 201, 138, 0.18),
+    0 12px 36px rgba(0, 0, 0, 0.14);
+  cursor: default;
+  z-index: 5;
+}
+.sv-card--left-1,
+.sv-card--right-1 {
+  width: 120px;
+  height: 340px;
+  background: #e4e9f4;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09);
+  opacity: 0.92;
+  z-index: 4;
+}
+.sv-card--left-2,
+.sv-card--right-2 {
+  width: 100px;
+  height: 280px;
+  background: #d8dff0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+  opacity: 0.65;
+  z-index: 3;
+}
+.sv-card--left-3,
+.sv-card--right-3 {
+  width: 80px;
+  height: 220px;
+  background: #cdd5ea;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  opacity: 0.4;
+  z-index: 2;
+}
+
+/* hover on non-center */
+.sv-card--left-1:hover,
+.sv-card--right-1:hover {
+  opacity: 1;
+}
+.sv-card--left-2:hover,
+.sv-card--right-2:hover {
+  opacity: 0.85;
+}
+.sv-card--left-3:hover,
+.sv-card--right-3:hover {
+  opacity: 0.6;
+}
+
+/* ── Video (center) ──────────────────────────────────────────── */
+.sv-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Course badge ────────────────────────────────────────────── */
+.sv-card-badge {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+/* ── Name bar ────────────────────────────────────────────────── */
+.sv-card-namebar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+  padding: 32px 14px 16px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+
+/* ── Idle card (side cards) ──────────────────────────────────── */
+.sv-card-idle {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 18px;
+  position: relative;
+}
+.sv-card-pattern {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.sv-card-idle-name {
+  position: relative;
+  z-index: 1;
+  color: #3a3f5c;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  margin: 0;
+}
+
+/* ── Dots ────────────────────────────────────────────────────── */
+.sv-dots {
+  display: flex;
+  gap: 7px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 300px;
+}
+.sv-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  background: #c8cedf;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background 0.3s,
+    width 0.3s,
+    border-radius 0.3s;
+  flex-shrink: 0;
+}
+.sv-dot-active {
+  background: #2dc98a;
+  width: 22px;
+  border-radius: 4px;
+}
+
+/* ── Tablet: 5 cards  (≤1024px) ─────────────────────────────── */
+@media (max-width: 1024px) {
+  .sv-cards-wrapper {
+    height: 420px;
+  }
+
+  .sv-card--center {
+    width: 260px;
+    height: 400px;
+  }
+  .sv-card--left-1,
+  .sv-card--right-1 {
+    width: 90px;
+    height: 310px;
+  }
+  .sv-card--left-2,
+  .sv-card--right-2 {
+    width: 72px;
+    height: 250px;
+  }
+
+  /* hide the 3rd side cards on tablet */
+  .sv-card--left-3,
+  .sv-card--right-3 {
+    display: none;
+  }
+}
+
+/* ── Mobile: 3 cards  (≤600px) ──────────────────────────────── */
+@media (max-width: 600px) {
+  .sv-section {
+    padding: 60px 8px 48px;
+  }
+
+  .sv-stage {
+    gap: 8px;
+  }
+
+  .sv-cards-wrapper {
+    height: 360px;
+    gap: 8px;
+  }
+
+  .sv-card--center {
+    width: 220px;
+    height: 340px;
+  }
+  .sv-card--left-1,
+  .sv-card--right-1 {
+    width: 72px;
+    height: 260px;
+  }
+
+  /* hide 2nd and 3rd side cards on mobile */
+  .sv-card--left-2,
+  .sv-card--right-2,
+  .sv-card--left-3,
+  .sv-card--right-3 {
+    display: none;
+  }
+
+  /* Keep arrows visible and usable on mobile */
+  .sv-arrow {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+  }
+  .sv-arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+}

@@ -8,6 +8,7 @@ import Wallet from "./components/wallet/Wallet";
 import Folder from "./components/folder/Folder";
 import AppDownloadToggle from "./components/appDownloadToggle/AppDownloadToggle";
 import CodepenTimes from "./components/codepenTimes/CodepenTimes";
+import StudentVoices from "./components/studentVoices/StudentVoices";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
       {/* <Wallet /> */}
       {/* <Folder /> */}
       {/* <AppDownloadToggle /> */}
-      <CodepenTimes />
+      {/* <CodepenTimes /> */}
+      <StudentVoices />
     </>
   );
 }
