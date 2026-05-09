@@ -180,36 +180,6 @@ export default function StudentVoices() {
                   </>
                 ) : (
                   <div className="sv-card-idle">
-                    <div className="sv-card-pattern">
-                      <svg
-                        viewBox="0 0 100 160"
-                        preserveAspectRatio="none"
-                        style={{ width: "100%", height: "100%" }}
-                      >
-                        {[...Array(8)].map((_, i) => (
-                          <circle
-                            key={i}
-                            cx={50 + ((i % 2) - 0.5) * 40}
-                            cy={20 + Math.floor(i / 2) * 40}
-                            r="16"
-                            fill="none"
-                            stroke="rgba(0,0,0,0.07)"
-                            strokeWidth="1.5"
-                          />
-                        ))}
-                        <text
-                          x="50"
-                          y="85"
-                          textAnchor="middle"
-                          fill="rgba(0,0,0,0.05)"
-                          fontSize="26"
-                          fontWeight="bold"
-                          fontFamily="serif"
-                        >
-                          GG
-                        </text>
-                      </svg>
-                    </div>
                     <p className="sv-card-idle-name">{student.name}</p>
                   </div>
                 )}
